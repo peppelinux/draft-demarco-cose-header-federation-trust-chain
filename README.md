@@ -1,6 +1,6 @@
-# COSE Header Parameter for Carrying and Referencing OpenID Federation 1.0 Trust Chains
+# COSE Header Parameter for Carrying OpenID Federation 1.0 Trust Chains
 
-This is the working area for the individual Internet-Draft, "COSE Header Parameter for Carrying and Referencing OpenID Federation 1.0 Trust Chains".
+This is the working area for the individual Internet-Draft, "COSE Header Parameter for Carrying OpenID Federation 1.0 Trust Chains".
 
 * [Editor's Copy](https://peppelinux.github.io/draft-demarco-cose-header-federation-trust-chain/#go.draft-demarco-cose-header-federation-trust-chain.html)
 * [Datatracker Page](https://datatracker.ietf.org/doc/draft-demarco-cose-header-federation-trust-chain)
