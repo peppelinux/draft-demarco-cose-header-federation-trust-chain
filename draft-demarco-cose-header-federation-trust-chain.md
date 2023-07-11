@@ -1,5 +1,5 @@
 ---
-title: "COSE Header Parameter for Carrying and Referencing OpenID Federation 1.0 Trust Chains"
+title: "COSE Header Parameter for Carrying OpenID Federation 1.0 Trust Chains"
 abbrev: "COSE Trust Chains"
 category: std
 
