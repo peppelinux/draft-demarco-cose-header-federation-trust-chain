@@ -19,7 +19,7 @@ venue:
   type: "Working Group"
   mail: "cose@ietf.org"
   arch: "https://mailarchive.ietf.org/arch/browse/cose/"
-  github: "https://github.com/peppelinux/draft-demarco-cose-header-federation-trust-chain"
+  github: "peppelinux/draft-demarco-cose-header-federation-trust-chain"
 
 author:
  -
