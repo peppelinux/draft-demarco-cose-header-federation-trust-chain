@@ -76,7 +76,6 @@ metadata and cryptographic keys.
 This document defines a new COSE header parameter to
 identify and transport an OpenID Federation 1.0 Trust Chain.
 
-
 --- middle
 
 # Introduction
