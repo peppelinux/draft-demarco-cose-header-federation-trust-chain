@@ -96,8 +96,8 @@ with policies, metadata and other information required by the
 interoperability schemes or by a trust framework.
 
 OpenID Connect Federation 1.0 [OIDC-FED]
-standard allows the exchange of metadata, roles, trust marks, policies
-and public keys, in a certifiable and non-repudiable secure way.
+allows the exchange of metadata, roles, trust marks, policies
+and public keys, in a secure way.
 
 OIDC Federation 1.0 [OIDC-FED] allows the construction of a trust
 infrastructure in which even X.509 certificates can be published
@@ -109,15 +109,18 @@ the revocation mechanisms without
 the requirement to implement
 CRL or OCSP technologies, where X.509 requires it.
 
-
 # Conventions and Definitions
 
 {::boilerplate bcp14-tagged}
 
+# Terminology
+
+The terms Trust Anchor, Intermediate, Trust Chain, Entity Statement, are defined in [OIDC-FED] and used in this specification.
+
 # Audience Target audience/Usage
 
 The audience of the document is implementers that require a high level
-of security for the attestations of metadata, cryptographic keys
+of security for the exchange of metadata, cryptographic keys
 and policies.
 
 # Scope
@@ -130,10 +133,10 @@ Trust Chain is made available within the COSE headers.
 The following items are out of scope for the current version of this document:
 
 * X.509 publication over a [OIDC-FED] Infrastructure, this can be achieved
-  using `x5c` or `x5u` as defind in [RFC7517]
+  using `x5c` or `x5u` as defind in [RFC7517].
 * Metadata schemas, OIDC Federation allows the definition of custom
   metadata schemas even for entities not belonging
-  to OAuth and OpenID ecosystems.
+  to OAuth2 and OpenID ecosystems.
 
 # Terminology
 
@@ -181,7 +184,7 @@ COSE_Signature and COSE_Sign1 objects:  In these objects, the
   parameters identify the Trust Chain to be used for obtaining the
   key needed for validating the signature, any needed metadata for
   interoperability purpose, any metadata policy
-  and any required Trust Marks for administrative compliaces.
+  and any required Trust Marks for administrative and technical compliances.
 
 The labels assigned to the header parameter can be found in Table 1.
 
