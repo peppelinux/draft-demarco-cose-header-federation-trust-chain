@@ -4,8 +4,8 @@
 
 CBOR Object Signing and Encryption                           G. D. Marco
 Internet-Draft                                               independent
-Intended status: Standards Track                            24 July 2023
-Expires: 25 January 2024
+Intended status: Standards Track                        24 November 2023
+Expires: 27 May 2024
 
 
  COSE Header Parameter for Carrying OpenID Federation 1.0 Trust Chains
@@ -18,9 +18,8 @@ Abstract
    are needed for the security and verifiability of the message, such as
    algorithms and keys.
 
-   OpenID Connect Federation 1.0 [OIDC-FED] is a general purpose
-   attestation mechanism to obtain verifiable metadata and cryptographic
-   keys.
+   OpenID Federation 1.0 [OIDC-FED] is a general purpose attestation
+   mechanism to obtain verifiable metadata and cryptographic keys.
 
    This document defines a new COSE header parameter to identify and
    transport an OpenID Federation 1.0 Trust Chain.
@@ -57,7 +56,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 25 January 2024.
+   This Internet-Draft will expire on 27 May 2024.
 
 Copyright Notice
 
@@ -106,14 +105,13 @@ Table of Contents
    certificates with policies, metadata and other information required
    by the interoperability schemes or by a trust framework.
 
-   OpenID Connect Federation 1.0 [OIDC-FED] allows the exchange of
-   metadata, roles, trust marks, policies and public keys, in a secure
-   way.
+   OpenID Federation 1.0 [OIDC-FED] allows the exchange of metadata,
+   roles, trust marks, policies and public keys, in a secure way.
 
-   OIDC Federation 1.0 [OIDC-FED] allows the construction of a trust
+   OpenID Federation 1.0 [OIDC-FED] allows the construction of a trust
    infrastructure in which even X.509 certificates can be published
    within the Entity Statements that make up the federation Trust Chain.
-   This flexibility allows an infrastructure based on OIDC Federation
+   This flexibility allows an infrastructure based on OpenID Federation
    1.0 to guarantee the security of the solutions, the historical
    verifiability of the signatures, and the revocation mechanisms
    without the requirement to implement CRL or OCSP technologies, where
@@ -151,9 +149,9 @@ Table of Contents
    *  X.509 publication over a [OIDC-FED] Infrastructure, this can be
       achieved using x5c or x5u as defind in [RFC7517].
 
-   *  Metadata schemas, OIDC Federation allows the definition of custom
-      metadata schemas even for entities not belonging to OAuth2 and
-      OpenID ecosystems.
+   *  Metadata schemas, OpenID Federation allows the definition of
+      custom metadata schemas even for entities not belonging to OAuth
+      2.0 and OpenID ecosystems.
 
 6.  Terminology
 
@@ -163,10 +161,10 @@ Table of Contents
 
 7.  The Scope of Trust Chain COSE Header Parameter
 
-   The use of OIDC Federation Trust Chain enables a trust infrastructure
-   with full suites of Trust Anchors, Intermediates, status and
-   revocation checking, Trust Marks and metadata policies that have been
-   defined in [OIDC-FED].
+   The use of OpenID Federation Trust Chain enables a trust
+   infrastructure with full suites of Trust Anchors, Intermediates,
+   status and revocation checking, Trust Marks and metadata policies
+   that have been defined in [OIDC-FED].
 
    The Concise Binary Object Representation (CBOR) key structures
    [RFC8949] and Header Parameters for Carrying and Referencing X.509
@@ -208,7 +206,7 @@ Table of Contents
     +=============+=======+=================+=====================+
     | Name        | Label | Value Type      | Description         |
     +=============+=======+=================+=====================+
-    | trustchain  | 27    | COSE_TRUSTCHAIN | OpenID Connect      |
+    | trustchain  | 27    | COSE_TRUSTCHAIN | OpenID              |
     |             |       |                 | Federation 1.0      |
     |             |       |                 | Trust Chain         |
     +-------------+-------+-----------------+---------------------+
@@ -220,9 +218,9 @@ Table of Contents
 
    COSE_TRUSTCHAIN = [ N * jws :bstr ]
 
-   The variable N represent the number of Entity Statements that a Trust
-   Chain can contain.  The contents of "bstr" are the bytes representing
-   a JWS.
+   The variable N represents the number of Entity Statements that a
+   Trust Chain contains.  The contents of "bstr" are the bytes
+   representing a signed JWT.
 
 10.  IANA Considerations
 
@@ -231,8 +229,8 @@ Table of Contents
 11.  Normative References
 
    [OIDC-FED] Hedberg, R., Jones, M. B., Solberg, A. Å., Bradley, J., De
-              Marco, G., and V. Dzhuvinov, "OpenID Connect Federation
-              1.0", n.d..
+              Marco, G., and V. Dzhuvinov, "OpenID Federation 1.0",
+              n.d..
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,

@@ -11,31 +11,31 @@
 message structure uses message headers to give references to elements
 that are needed for the security and verifiability of the message, such as
 algorithms and keys. 
-       OpenID Connect Federation 1.0   is a general purpose
+       OpenID Federation 1.0   is a general purpose
 attestation mechanism to obtain verifiable
 metadata and cryptographic keys. 
        This document defines a new COSE header parameter to
 identify and transport an OpenID Federation 1.0 Trust Chain. 
     " name="description">
-<meta content="xml2rfc 3.17.4" name="generator">
+<meta content="xml2rfc 3.18.2" name="generator">
 <meta content="OpenID Connect Federation" name="keyword">
 <meta content="COSE" name="keyword">
 <meta content="draft-demarco-cose-header-federation-trust-chain-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.17.4
-    Python 3.11.4
+  xml2rfc 3.18.2
+    Python 3.11.6
     ConfigArgParse 1.5.3
     google-i18n-address 3.1.0
     intervaltree 3.1.0
     Jinja2 3.1.2
     lxml 4.9.3
-    platformdirs 3.9.1
+    platformdirs 4.0.0
     pycountry 22.3.5
     PyYAML 6.0
     requests 2.31.0
     setuptools 67.7.2
     six 1.16.0
-    wcwidth 0.2.6
+    wcwidth 0.2.10
 -->
 <link href="draft-demarco-cose-header-federation-trust-chain.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
@@ -658,7 +658,7 @@ sub, sup {
 }
 #toc nav li {
   line-height: 1.3em;
-  margin: 0.75em 0;
+  margin: 2px 0;
   padding-left: 1.2em;
   text-indent: -1.2em;
 }
@@ -751,7 +751,7 @@ hr.addr {
     z-index: 2;
     top: 0;
     right: 0;
-    padding: 0;
+    padding: 1px 0 0 0;
     margin: 0;
     border-bottom: 1px solid #ccc;
     opacity: 0.6;
@@ -875,16 +875,13 @@ hr.addr {
     border-top: none;
     padding-top: 0;
   }
-  figure, pre {
+  figure, pre, .vcard {
     page-break-inside: avoid;
-  }
-  figure {
-    overflow: scroll;
   }
   h1, h2, h3, h4, h5, h6 {
     page-break-after: avoid;
   }
-  h2+*, h3+*, h4+*, h5+*, h6+* {
+  :is(h2, h3, h4, h5, h6)+*, dd {
     page-break-before: avoid;
   }
   pre {
@@ -897,6 +894,9 @@ hr.addr {
   }
   td {
     border-top: 1px solid #ddd;
+  }
+  .toplink {
+    display: none;
   }
 }
 
@@ -998,28 +998,6 @@ address div.right {
   text-align: right;
 }
 
-/* Give the table caption label the same styling as the figcaption */
-
-@media print {
-  .toplink {
-    display: none;
-  }
-
-  /* avoid overwriting the top border line with the ToC header */
-  #toc {
-    padding-top: 1px;
-  }
-
-  /* Avoid page breaks inside dl and author address entries */
-  dd {
-    page-break-before: avoid;
-  }
-  .vcard {
-    page-break-inside: avoid;
-  }
-
-}
-
 /* Dark mode. */
 @media (prefers-color-scheme: dark) {
 :root {
@@ -1056,11 +1034,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">COSE Trust Chains</td>
-<td class="right">July 2023</td>
+<td class="right">November 2023</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Marco</td>
-<td class="center">Expires 25 January 2024</td>
+<td class="center">Expires 27 May 2024</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1073,12 +1051,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-demarco-cose-header-federation-trust-chain-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2023-07-24" class="published">24 July 2023</time>
+<time datetime="2023-11-24" class="published">24 November 2023</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2024-01-25">25 January 2024</time></dd>
+<dd class="expires"><time datetime="2024-05-27">27 May 2024</time></dd>
 <dt class="label-authors">Author:</dt>
 <dd class="authors">
 <div class="author">
@@ -1095,7 +1073,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 message structure uses message headers to give references to elements
 that are needed for the security and verifiability of the message, such as
 algorithms and keys.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
-<p id="section-abstract-2">OpenID Connect Federation 1.0 <span>[<a href="#OIDC-FED" class="cite xref">OIDC-FED</a>]</span> is a general purpose
+<p id="section-abstract-2">OpenID Federation 1.0 <span>[<a href="#OIDC-FED" class="cite xref">OIDC-FED</a>]</span> is a general purpose
 attestation mechanism to obtain verifiable
 metadata and cryptographic keys.<a href="#section-abstract-2" class="pilcrow">¶</a></p>
 <p id="section-abstract-3">This document defines a new COSE header parameter to
@@ -1135,7 +1113,7 @@ identify and transport an OpenID Federation 1.0 Trust Chain.<a href="#section-ab
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 25 January 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 27 May 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1229,14 +1207,14 @@ attestation of metadata, proofs of compliance and policies.<a href="#section-1-2
 <p id="section-1-3">In these cases, it would be necessary to extend the X.509 certificates
 with policies, metadata and other information required by the
 interoperability schemes or by a trust framework.<a href="#section-1-3" class="pilcrow">¶</a></p>
-<p id="section-1-4">OpenID Connect Federation 1.0 <span>[<a href="#OIDC-FED" class="cite xref">OIDC-FED</a>]</span>
+<p id="section-1-4">OpenID Federation 1.0 <span>[<a href="#OIDC-FED" class="cite xref">OIDC-FED</a>]</span>
 allows the exchange of metadata, roles, trust marks, policies
 and public keys, in a secure way.<a href="#section-1-4" class="pilcrow">¶</a></p>
-<p id="section-1-5">OIDC Federation 1.0 <span>[<a href="#OIDC-FED" class="cite xref">OIDC-FED</a>]</span> allows the construction of a trust
+<p id="section-1-5">OpenID Federation 1.0 <span>[<a href="#OIDC-FED" class="cite xref">OIDC-FED</a>]</span> allows the construction of a trust
 infrastructure in which even X.509 certificates can be published
 within the Entity Statements that make up
 the federation Trust Chain. This flexibility allows an infrastructure
-based on OIDC Federation 1.0 to guarantee the security of the
+based on OpenID Federation 1.0 to guarantee the security of the
 solutions, the historical verifiability of the signatures, and
 the revocation mechanisms without
 the requirement to implement
@@ -1286,12 +1264,14 @@ Trust Chain is made available within the COSE headers.<a href="#section-5-1" cla
         </h3>
 <p id="section-5.1-1">The following items are out of scope for the current version of this document:<a href="#section-5.1-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-5.1-2.1">X.509 publication over a <span>[<a href="#OIDC-FED" class="cite xref">OIDC-FED</a>]</span> Infrastructure, this can be achieved
-using <code>x5c</code> or <code>x5u</code> as defind in <span>[<a href="#RFC7517" class="cite xref">RFC7517</a>]</span>.<a href="#section-5.1-2.1" class="pilcrow">¶</a>
+<li class="normal" id="section-5.1-2.1">
+            <p id="section-5.1-2.1.1">X.509 publication over a <span>[<a href="#OIDC-FED" class="cite xref">OIDC-FED</a>]</span> Infrastructure, this can be achieved
+using <code>x5c</code> or <code>x5u</code> as defind in <span>[<a href="#RFC7517" class="cite xref">RFC7517</a>]</span>.<a href="#section-5.1-2.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-5.1-2.2">Metadata schemas, OIDC Federation allows the definition of custom
+          <li class="normal" id="section-5.1-2.2">
+            <p id="section-5.1-2.2.1">Metadata schemas, OpenID Federation allows the definition of custom
 metadata schemas even for entities not belonging
-to OAuth2 and OpenID ecosystems.<a href="#section-5.1-2.2" class="pilcrow">¶</a>
+to OAuth 2.0 and OpenID ecosystems.<a href="#section-5.1-2.2.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
@@ -1312,7 +1292,7 @@ to OAuth2 and OpenID ecosystems.<a href="#section-5.1-2.2" class="pilcrow">¶</a
       <h2 id="name-the-scope-of-trust-chain-co">
 <a href="#section-7" class="section-number selfRef">7. </a><a href="#name-the-scope-of-trust-chain-co" class="section-name selfRef">The Scope of Trust Chain COSE Header Parameter</a>
       </h2>
-<p id="section-7-1">The use of OIDC Federation Trust Chain enables a trust infrastructure
+<p id="section-7-1">The use of OpenID Federation Trust Chain enables a trust infrastructure
 with full suites of Trust Anchors, Intermediates, status and revocation
 checking, Trust Marks and metadata policies that have been defined
 in <span>[<a href="#OIDC-FED" class="cite xref">OIDC-FED</a>]</span>.<a href="#section-7-1" class="pilcrow">¶</a></p>
@@ -1360,7 +1340,7 @@ is defined in <span>[<a href="#OIDC-FED" class="cite xref">OIDC-FED</a>]</span>.
  +=============+=======+=================+=====================+
  | Name        | Label | Value Type      | Description         |
  +=============+=======+=================+=====================+
- | trustchain  | 27    | COSE_TRUSTCHAIN | OpenID Connect      |
+ | trustchain  | 27    | COSE_TRUSTCHAIN | OpenID              |
  |             |       |                 | Federation 1.0      |
  |             |       |                 | Trust Chain         |
  +-------------+-------+-----------------+---------------------+
@@ -1373,9 +1353,9 @@ description (see <span>[<a href="#RFC8610" class="cite xref">RFC8610</a>]</span>
 <p id="section-9-9"><code>
 COSE_TRUSTCHAIN = [ N * jws :bstr ]
 </code><a href="#section-9-9" class="pilcrow">¶</a></p>
-<p id="section-9-10">The variable N represent the number of Entity Statements
-that a Trust Chain can contain.
-The contents of "bstr" are the bytes representing a JWS.<a href="#section-9-10" class="pilcrow">¶</a></p>
+<p id="section-9-10">The variable N represents the number of Entity Statements
+that a Trust Chain contains.
+The contents of "bstr" are the bytes representing a signed JWT.<a href="#section-9-10" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="iana-considerations">
@@ -1386,6 +1366,7 @@ The contents of "bstr" are the bytes representing a JWS.<a href="#section-9-10" 
 <p id="section-10-1">TBD<a href="#section-10-1" class="pilcrow">¶</a></p>
 </section>
 </div>
+<div id="sec-normative-references">
 <section id="section-11">
       <h2 id="name-normative-references">
 <a href="#section-11" class="section-number selfRef">11. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
@@ -1393,7 +1374,7 @@ The contents of "bstr" are the bytes representing a JWS.<a href="#section-9-10" 
 <dl class="references">
 <dt id="OIDC-FED">[OIDC-FED]</dt>
       <dd>
-<span class="refAuthor">Hedberg, R.</span>, <span class="refAuthor">Jones, M. B.</span>, <span class="refAuthor">Solberg, A. Å.</span>, <span class="refAuthor">Bradley, J.</span>, <span class="refAuthor">De Marco, G.</span>, and <span class="refAuthor">V. Dzhuvinov</span>, <span class="refTitle">"OpenID Connect Federation 1.0"</span>, <span>n.d.</span>. </dd>
+<span class="refAuthor">Hedberg, R.</span>, <span class="refAuthor">Jones, M. B.</span>, <span class="refAuthor">Solberg, A. Å.</span>, <span class="refAuthor">Bradley, J.</span>, <span class="refAuthor">De Marco, G.</span>, and <span class="refAuthor">V. Dzhuvinov</span>, <span class="refTitle">"OpenID Federation 1.0"</span>, <span>n.d.</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC2119">[RFC2119]</dt>
       <dd>
@@ -1437,6 +1418,7 @@ The contents of "bstr" are the bytes representing a JWS.<a href="#section-9-10" 
 <dd class="break"></dd>
 </dl>
 </section>
+</div>
 <div id="acknowledgments">
 <section id="appendix-A">
       <h2 id="name-acknowledgments">
