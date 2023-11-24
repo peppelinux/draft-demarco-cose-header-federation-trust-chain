@@ -38,7 +38,7 @@ normative:
   RFC9360: RFC9360
 
   OIDC-FED:
-    title: "OpenID Connect Federation 1.0"
+    title: "OpenID Federation 1.0"
     author:
       -
         ins: R. Hedberg
@@ -69,7 +69,7 @@ message structure uses message headers to give references to elements
 that are needed for the security and verifiability of the message, such as
 algorithms and keys.
 
-OpenID Connect Federation 1.0 [OIDC-FED] is a general purpose
+OpenID Federation 1.0 [OIDC-FED] is a general purpose
 attestation mechanism to obtain verifiable
 metadata and cryptographic keys.
 
@@ -95,15 +95,15 @@ In these cases, it would be necessary to extend the X.509 certificates
 with policies, metadata and other information required by the
 interoperability schemes or by a trust framework.
 
-OpenID Connect Federation 1.0 [OIDC-FED]
+OpenID Federation 1.0 [OIDC-FED]
 allows the exchange of metadata, roles, trust marks, policies
 and public keys, in a secure way.
 
-OIDC Federation 1.0 [OIDC-FED] allows the construction of a trust
+OpenID Federation 1.0 [OIDC-FED] allows the construction of a trust
 infrastructure in which even X.509 certificates can be published
 within the Entity Statements that make up
 the federation Trust Chain. This flexibility allows an infrastructure
-based on OIDC Federation 1.0 to guarantee the security of the
+based on OpenID Federation 1.0 to guarantee the security of the
 solutions, the historical verifiability of the signatures, and
 the revocation mechanisms without
 the requirement to implement
@@ -134,9 +134,9 @@ The following items are out of scope for the current version of this document:
 
 * X.509 publication over a [OIDC-FED] Infrastructure, this can be achieved
   using `x5c` or `x5u` as defind in [RFC7517].
-* Metadata schemas, OIDC Federation allows the definition of custom
+* Metadata schemas, OpenID Federation allows the definition of custom
   metadata schemas even for entities not belonging
-  to OAuth2 and OpenID ecosystems.
+  to OAuth 2.0 and OpenID ecosystems.
 
 # Terminology
 
@@ -145,7 +145,7 @@ This specification uses the terms "Trust Chain", "Trust Anchor",
 
 # The Scope of Trust Chain COSE Header Parameter
 
-The use of OIDC Federation Trust Chain enables a trust infrastructure
+The use of OpenID Federation Trust Chain enables a trust infrastructure
 with full suites of Trust Anchors, Intermediates, status and revocation
 checking, Trust Marks and metadata policies that have been defined
 in [OIDC-FED].
@@ -191,7 +191,7 @@ The labels assigned to the header parameter can be found in Table 1.
      +=============+=======+=================+=====================+
      | Name        | Label | Value Type      | Description         |
      +=============+=======+=================+=====================+
-     | trustchain  | 27    | COSE_TRUSTCHAIN | OpenID Connect      |
+     | trustchain  | 27    | COSE_TRUSTCHAIN | OpenID              |
      |             |       |                 | Federation 1.0      |
      |             |       |                 | Trust Chain         |
      +-------------+-------+-----------------+---------------------+
@@ -205,9 +205,9 @@ description (see [RFC8610]) of the text above.
 COSE_TRUSTCHAIN = [ N * jws :bstr ]
 ```
 
-The variable N represent the number of Entity Statements
-that a Trust Chain can contain.
-The contents of "bstr" are the bytes representing a JWS.
+The variable N represents the number of Entity Statements
+that a Trust Chain contains.
+The contents of "bstr" are the bytes representing a signed JWT.
 
 # IANA Considerations
 
