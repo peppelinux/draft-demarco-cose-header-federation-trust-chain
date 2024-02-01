@@ -26,6 +26,10 @@ author:
     fullname: Giuseppe De Marco
     organization: independent
     email: demarcog83@gmail.com
+ -
+    fullname: John Bradley
+    organization: Yubico
+    email: ve7jtb@ve7jtb.com
 
 normative:
   RFC7517: RFC7517
