@@ -4,8 +4,9 @@
 
 CBOR Object Signing and Encryption                           G. D. Marco
 Internet-Draft                                               independent
-Intended status: Standards Track                        24 November 2023
-Expires: 27 May 2024
+Intended status: Standards Track                              J. Bradley
+Expires: 4 August 2024                                            Yubico
+                                                         1 February 2024
 
 
  COSE Header Parameter for Carrying OpenID Federation 1.0 Trust Chains
@@ -56,11 +57,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 27 May 2024.
+   This Internet-Draft will expire on 4 August 2024.
 
 Copyright Notice
 
-   Copyright (c) 2023 IETF Trust and the persons identified as the
+   Copyright (c) 2024 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -87,7 +88,7 @@ Table of Contents
    10. IANA Considerations
    11. Normative References
    Acknowledgments
-   Author's Address
+   Authors' Addresses
 
 1.  Introduction
 
@@ -282,8 +283,13 @@ Acknowledgments
 
    TBD
 
-Author's Address
+Authors' Addresses
 
    Giuseppe De Marco
    independent
    Email: demarcog83@gmail.com
+
+
+   John Bradley
+   Yubico
+   Email: ve7jtb@ve7jtb.com
